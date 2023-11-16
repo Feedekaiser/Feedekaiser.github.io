@@ -1,0 +1,110 @@
+:root {
+	--top_bar_height: 36px;
+	--top_bar_pad: 8px;
+}
+
+body { margin: 0; }
+main * { 
+	overflow: hidden;
+	transition: all 0.5s ease-out;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.split_container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+
+.split_container > * {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.split_left { border-right: 0.5px solid #7f7f7f; }
+.split_right { border-left: 0.5px solid #7f7f7f; }
+
+.split_container > * > .top_bar {
+	height: calc(var(--top_bar_height) - (var(--top_bar_pad) * 2));
+	width: 100%;
+	background-color: var(--bg_accent_0);
+	border-bottom: 1px inset #7f7f7f;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	justify-items: end;
+	padding: var(--top_bar_pad) 0;
+}
+
+.top_bar > span {
+	margin: 0 0 0 var(--top_bar_pad);
+}
+
+.top_bar > .side_buttons {
+	margin: 0 var(--top_bar_pad) 0 0;
+	display: flex;
+    gap: 8px;
+	height: 100%;
+}
+
+.split_left > .top_bar > .side_buttons * {
+	padding: 0;
+	user-select: none;
+}
+
+.split_left > .top_bar > .side_buttons > * {
+	height: 100%;
+}
+
+.split_left > .top_bar > .side_buttons button {
+	background: transparent;
+	border: transparent;
+}
+
+#github_svg, #palette_svg {
+	max-height: 100%;
+	filter: invert(var(--dark_icon_base_invert));
+}
+
+#github_svg { content: url("github.svg"); }
+#palette_svg { content: url("palette.svg"); }
+
+#github_svg:hover, #palette_svg:hover { 
+	transform: rotateY(1turn);
+	cursor: pointer;
+}
+
+.editor { height: 100%; }
+.editor::-webkit-scrollbar { display: none; }
+.editor * { font-family: "Consolas", "Courier New", Courier, monospace; }
+
+.editor > .line_number {
+	margin: 0 8px 0 0;
+	padding: 0;
+	width: 36px;
+	float: left;
+	user-select: none;
+}
+
+.line_number > li { 
+	color: var(--text_dim); 
+	text-align: end;
+}
+
+.line_number > li::marker { content: none; }
+
+
+.input:focus { outline: none; }
+
+.split_right > .output {
+	height: 100%;
+}
+
+.editor, .split_right > .output {
+	overflow-y: auto;
+}

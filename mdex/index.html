@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>mdex</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="mdex.js live preview."/>
+		<link rel="stylesheet" href="/css/root.css">
+		<script src="/js/theme.js"></script>
+		<link rel="stylesheet" href="css.css">
+		<link rel="stylesheet" href="mdex.css">
+	</head>
+
+	<body>
+		<main>
+			<div class="split_container">
+				<div class="split_left">
+					<div class="top_bar">
+						<span>mdex.js</span>
+						<div class="side_buttons">
+							<a href="https://github.com/Feedekaiser/mdex" title="Github Repo"><img id="github_svg" alt="Github Invertocat Icon"></a>
+							<button onclick="toggle_theme()" title="Toggle the color theme"><img id="palette_svg" alt="Color Palette Icon"></button>
+						</div>
+					</div>
+					<div class="editor">
+						<ol class="line_number"><li>1</li><li>2</li></ol>
+						<div class="input" contenteditable="plaintext-only"></div>
+					</div>
+				</div>
+				<div class="split_right">
+					<div class="top_bar">
+						<span>Output</span>
+					</div>
+					<div class="output mdex_root"></div>
+				</div>
+			</div>
+		</main>
+
+		<script type="module" src="input.js"></script>
+	</body>
+</html>

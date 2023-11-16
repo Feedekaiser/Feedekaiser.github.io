@@ -1,0 +1,12 @@
+:root {
+	--bg_main: #1e1e1e;
+	--text_main: #d7d7d7;
+	--text_dim: #a7a7a7;
+	--link_main: #4280e2;
+	--link_accent: #5d9bfd;
+	--bg_accent_0: #3c3c3c;
+	--bg_accent_1: #404040;
+	--bg_accent_2: #464646;
+	--dark_icon_base_invert: 1;
+	--light_icon_base_invert: 0;
+}
